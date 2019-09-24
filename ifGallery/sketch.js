@@ -64,9 +64,9 @@ function draw() {
     //show sloth
     image(sloth,0,0,sloth.width/4,sloth.height/4);
   }else if(currentImage == 3){
-    image(catpig,0,0,catpig.width/4,catpig.height/4);
+    image(catpig,0,0,catpig.width/2,catpig.height/2);
   }else if(currentImage == 4){
-    image(chicken,0,0,chicken.width/4,chicken.height/4);
+    image(chicken,0,0,chicken.width/2,chicken.height/2);
   }
 
 
