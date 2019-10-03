@@ -93,7 +93,7 @@ if(mouseX > hitX[1] && mouseX < hitX[1] + hitSize && mouseY > hitY[1] && mouseY 
   console.log("Button 1");
   currentImage = currentImage - 1;
 
-  if(currentImage == 0){
+  if(currentImage == -1){
     currentImage = 4;
   }//end of currentImage == 3 if statement
 
