@@ -76,27 +76,27 @@ function draw() {
   }else if(currentImage == 4){
     image(chicken,0,0,chicken.width/2,chicken.height/2);
   }
+}
 
-  function mousePressed(){
-  if(mouseX > hitX[0] && mouseX < hitX[0] + hitSize && mouseY > hitY[0] && mouseY < hitY[0] + hitSize){
-    console.log("Button 0");
-    currentImage = currentImage + 1;
+function mousePressed(){
+if(mouseX > hitX[0] && mouseX < hitX[0] + hitSize && mouseY > hitY[0] && mouseY < hitY[0] + hitSize){
+  console.log("Button 0");
+  currentImage = currentImage + 1;
 
-    if(currentImage == 5){
-      currentImage = 0;
-    }//end of currentImage == 3 if statement
+  if(currentImage == 5){
+    currentImage = 0;
+  }//end of currentImage == 3 if statement
 
-  }//button 0 end of hitzone
+}//button 0 end of hitzone
 
-  if(mouseX > hitX[1] && mouseX < hitX[1] + hitSize && mouseY > hitY[1] && mouseY < hitY[1] + hitSize){
-    console.log("Button 1");
-    currentImage = currentImage - 1;
+if(mouseX > hitX[1] && mouseX < hitX[1] + hitSize && mouseY > hitY[1] && mouseY < hitY[1] + hitSize){
+  console.log("Button 1");
+  currentImage = currentImage - 1;
 
-    if(currentImage == 0){
-      currentImage = 4;
-    }//end of currentImage == 3 if statement
+  if(currentImage == 0){
+    currentImage = 4;
+  }//end of currentImage == 3 if statement
 
-  }
+}
 
 }//end of mousePressed
-}
