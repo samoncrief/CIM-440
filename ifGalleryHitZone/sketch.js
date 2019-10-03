@@ -8,6 +8,8 @@ var puppy, dinosaur, sloth, catpig, chicken;
 //var pButton, dButton, sButton, cpButton, cButton;
 
 var currentImage = 0;
+var hitX = [100,200];
+var hitY = [300,300];
 var hitSize = 50;
 
 
