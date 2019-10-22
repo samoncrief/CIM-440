@@ -1,8 +1,8 @@
 var canvasFullw = 1200;
 var canvasFullh = 800;
 //planet size and color variables
-var planetSizes = [Me,Ve,Ea,Ma,Ju,Sa,Ne,Ur];
-var planetColors = [Me,Ve,Ea,Ma,Ju,Sa,Ne,Ur];
+var planetSizes = ["Me,Ve,Ea,Ma,Ju,Sa,Ne,Ur"];
+var planetColors = ["Me,Ve,Ea,Ma,Ju,Sa,Ne,Ur"];
 //previous time
 var prevTime;
 //delta time
@@ -20,13 +20,13 @@ function setup() {
   // put setup code here
   createCanvas(canvasFullw, canvasFullh);
   prevTime = millis();
-  background(0, 255, 0);
+  background(0);
 }
 
 function draw() {
   // put drawing code here
   // default fill,stroke,strokeWeight
-  fill(0,0,0);
+  fill(255);
   stroke("black");
   strokeWeight(1);
 
