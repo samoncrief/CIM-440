@@ -20,11 +20,11 @@ function setup() {
   // put setup code here
   createCanvas(canvasFullw, canvasFullh);
   prevTime = millis();
-  background("black");
   timeTheta = 1/10;
 }
 
 function draw() {
+  background("black");
   angleMode(DEGREES);
   // put drawing code here
   // default fill,stroke,strokeWeight
