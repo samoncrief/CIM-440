@@ -21,7 +21,7 @@ function setup() {
   createCanvas(canvasFullw, canvasFullh);
   prevTime = millis();
   background("black");
-  timeTheta = 1/100;
+  timeTheta = 1/10;
 }
 
 function draw() {
@@ -48,7 +48,7 @@ function draw() {
 
     //dummy object
     fill("blue");
-    circle(canvasFullw/2 + 100*(cos(millis()*timeTheta)), canvasFullh + 100*(sin(millis()*timeTheta)), 30);
+    circle(canvasFullw/2 + 100*(cos(millis()*timeTheta)), canvasFullh/2 + 100*(sin(millis()*timeTheta)), 30);
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
     }
