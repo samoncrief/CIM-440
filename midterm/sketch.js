@@ -34,12 +34,14 @@ function draw() {
   deltaTime = millis() - prevTime;
   //update previous time
   prevTime = millis();
-  debug.log("Delta: " + deltaTime);
+  console.log("Delta: " + deltaTime);
   if (/*display boolean*/ true){
     //display info for current selection
   }
   else{
     //create sun at center
+    fill("orange");
+    circle(canvasFullw/2,canvasFullh/2,30);
     //update theta
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
