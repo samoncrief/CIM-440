@@ -13,7 +13,7 @@ var theta;
 //display window boolean
 var infoDisplay;
 //planet info array
-var planetInfo = [Me,Ve,Ea,Ma,Ju,Sa,Ne,Ur];
+var planetInfo = ["Me,Ve,Ea,Ma,Ju,Sa,Ne,Ur"];
 var currentPlanet;
 
 function setup() {
