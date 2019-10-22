@@ -52,8 +52,10 @@ function draw() {
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
     }
+    fill("gray");
     for(var i = 0; i < 8; i++){
       //create buttons for each planet (also the sun? update limit)
+      rect(80+(i*160),canvasFullh - 90,80,80);
     }
   }
 
