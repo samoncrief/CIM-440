@@ -20,10 +20,12 @@ function setup() {
   // put setup code here
   createCanvas(canvasFullw, canvasFullh);
   prevTime = millis();
-  background(0);
+  background("black");
+  timeTheta = 1/100;
 }
 
 function draw() {
+  angleMode(DEGREES);
   // put drawing code here
   // default fill,stroke,strokeWeight
   fill(255);
@@ -35,7 +37,7 @@ function draw() {
   //update previous time
   prevTime = millis();
   console.log("Delta: " + deltaTime);
-  if (/*display boolean*/ true){
+  if (/*display boolean*/ false){
     //display info for current selection
   }
   else{
@@ -43,6 +45,10 @@ function draw() {
     fill("orange");
     circle(canvasFullw/2,canvasFullh/2,30);
     //update theta
+
+    //dummy object
+    fill("blue");
+    circle(canvasFullw/2 + 100*(cos(millis()*timeTheta)), canvasFullh + 100*(sin(millis()*timeTheta)), 30);
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
     }
