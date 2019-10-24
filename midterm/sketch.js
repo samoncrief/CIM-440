@@ -67,7 +67,7 @@ function draw() {
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
       fill(planetColors[i]);
-      circle(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(millis()*timeTheta)), canvasFullh/2 + planetDistances[i]*(sin(millis()*timeTheta)),planetSizes[i]*planetSizeScale);
+      circle(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(millis()*timeTheta)), canvasFullh/2 + planetDistances[i]*planetDistanceScale*(sin(millis()*timeTheta)),planetSizes[i]*planetSizeScale);
     }
     fill("gray");
     for(var i = 0; i < 8; i++){
