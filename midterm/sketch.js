@@ -24,7 +24,7 @@ var deltaTime;
 //time-theta scale
 var timeTheta;
 var theta;
-var thetaOffsets = [0,180,0,180,0,180,0,180];
+var thetaSign = [1,-1,1,-1,1,-1,1,-1];
 //display window boolean
 var infoDisplay;
 //planet info array
@@ -69,7 +69,7 @@ function draw() {
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
       fill(planetColors[i]);
-      circle(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta+thetaOffsets[i])), canvasFullh/2 + planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta+thetaOffsets[i])),planetSizes[i]*planetSizeScale);
+      circle(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(thetaSign[i]*cos(theta*timeTheta)), canvasFullh/2 + planetDistances[i]*planetDistanceScale*(thetaSign[i]*sin(theta*timeTheta)),planetSizes[i]*planetSizeScale);
     }
     fill("gray");
     for(var i = 0; i < 8; i++){
