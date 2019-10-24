@@ -53,7 +53,7 @@ function draw() {
   prevTime = millis();
   //console.log("Delta: " + deltaTime);
   theta = theta + deltaTime;
-  if (/*display boolean*/ false){
+  if (false){
     //display info for current selection
   }
   else{
