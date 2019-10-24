@@ -51,7 +51,7 @@ function draw() {
   deltaTime = millis() - prevTime;
   //update previous time
   prevTime = millis();
-  console.log("Delta: " + deltaTime);
+  //console.log("Delta: " + deltaTime);
   theta = theta + deltaTime;
   if (/*display boolean*/ false){
     //display info for current selection
@@ -71,6 +71,7 @@ function draw() {
       fill(planetColors[i]);
       circle(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(thetaSign[i]*cos(theta*timeTheta)), canvasFullh/2 + planetDistances[i]*planetDistanceScale*(thetaSign[i]*sin(theta*timeTheta)),planetSizes[i]*planetSizeScale);
     }
+    console.log("Uranus is at: " + canvasFullw/2 + planetDistances[i]*planetDistanceScale*(thetaSign[i]*cos(theta*timeTheta)) + ", " + canvasFullh/2 + planetDistances[i]*planetDistanceScale*(thetaSign[i]*sin(theta*timeTheta)));
     fill("gray");
     for(var i = 0; i < 8; i++){
       //create buttons for each planet (also the sun? update limit)
