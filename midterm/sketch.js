@@ -1,10 +1,10 @@
 var canvasFullw = 1200;
-var canvasFullh = 800;
+var canvasFullh = 1200;
 //planet size and color variables
 var planetSizes = [0.38,0.95,1,.53,11.2,9.45,4,3.88];
 var planetSizeScale = 10;
 var planetDistances = [35.98,67.24,92.96,141.6,483.8,890.8,1784,2793];
-var planetDistanceScale = 600/2793;
+var planetDistanceScale = 500/2793;
 
 /// Planet sizes and distances:
 /// Mercury: 2440km (.38), 35.98 mil.mi
@@ -24,6 +24,7 @@ var deltaTime;
 //time-theta scale
 var timeTheta;
 var theta;
+var thetaOffsets = [0,180,0,180,0,180,0,180];
 //display window boolean
 var infoDisplay;
 //planet info array
@@ -51,6 +52,7 @@ function draw() {
   //update previous time
   prevTime = millis();
   console.log("Delta: " + deltaTime);
+  theta = theta + deltaTime;
   if (/*display boolean*/ false){
     //display info for current selection
   }
@@ -67,7 +69,7 @@ function draw() {
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
       fill(planetColors[i]);
-      circle(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(millis()*timeTheta)), canvasFullh/2 + planetDistances[i]*planetDistanceScale*(sin(millis()*timeTheta)),planetSizes[i]*planetSizeScale);
+      circle(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta+thetaOffsets[i])), canvasFullh/2 + planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta+thetaOffsets[i])),planetSizes[i]*planetSizeScale);
     }
     fill("gray");
     for(var i = 0; i < 8; i++){
