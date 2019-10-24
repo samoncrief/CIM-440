@@ -23,7 +23,7 @@ var prevTime;
 var deltaTime;
 //time-theta scale
 var timeTheta = 1;
-var theta;
+var theta = 0;
 var thetaSign = [1,-1,1,-1,1,-1,1,-1];
 //display window boolean
 var infoDisplay;
