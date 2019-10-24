@@ -35,7 +35,7 @@ function setup() {
   // put setup code here
   createCanvas(canvasFullw, canvasFullh);
   prevTime = millis();
-  timeTheta = 1/10;
+  timeTheta = 1/20;
 }
 
 function draw() {
@@ -69,7 +69,7 @@ function draw() {
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
       fill(planetColors[i]);
-      circle(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta)), canvasFullh/2 + planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta)),planetSizes[i]*planetSizeScale);
+      circle(canvasFullw/2 + thetaSign[i]*planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta)), canvasFullh/2 + thetaSign[i]*planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta)),planetSizes[i]*planetSizeScale);
     }
     console.log("Uranus is at: " + canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta)) + ", " + canvasFullh/2 + planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta)));
     fill("gray");
