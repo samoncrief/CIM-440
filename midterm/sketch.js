@@ -35,7 +35,7 @@ var infoDisplay;
 //planet info array
 var planetNames = ["Mercury","Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
 var planetInfo = ["Me,Ve,Ea,Ma,Ju,Sa,Ur,Ne"];
-var currentPlanet = 0;
+var currentPlanet = 3;
 
 var buttonSize = 100;
 var buttonSpace = 200/7;
@@ -112,6 +112,7 @@ function draw() {
       rect(100+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize + 10),buttonSize,buttonSize);
       fill("black");
       text(planetNames[i],100+buttonSize/2+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize/2 + 10));
+      text(i+1,100+buttonSize/2+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize/2 + 10)+(buttonSize/4));
   }
 
 }
