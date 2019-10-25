@@ -79,7 +79,7 @@ function draw() {
     rect(100,100,canvasFullw - 200, canvasFullh - 100 - (buttonSize + 110));
     fill("black");
     textAlign(LEFT);
-    text(planetInfo[i],110,110);
+    text(planetInfo[currentPlanet],110,110);
   }
   else{
     //create sun at center
