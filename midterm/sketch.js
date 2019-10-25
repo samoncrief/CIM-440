@@ -152,7 +152,7 @@ function keyPressed(){
   }
   else if(key > '0' && key < '9'){
     //currentPlanet = key - 1;
-    console.log(0+key);
+    console.log(1.0+key-1.0);
     infoDisplay = true;
   }
 }
