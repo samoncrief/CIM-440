@@ -54,7 +54,6 @@ function setup() {
   createCanvas(canvasFullw, canvasFullh);
   prevTime = millis();
   timeTheta = 1/20;
-  textSize(20);
 }
 
 function draw() {
@@ -70,8 +69,7 @@ function draw() {
   deltaTime = millis() - prevTime;
   //update previous time
   prevTime = millis();
-  //console.log("Delta: " + deltaTime);
-  theta = theta + deltaTime;
+
   if (true){
     //display info for current selection
     fill(planetColors[currentPlanet]);
@@ -80,9 +78,12 @@ function draw() {
     rect(100,100,canvasFullw - 200, canvasFullh - 100 - (buttonSize + 110));
     fill("black");
     textAlign(LEFT);
+    textSize(40);
     text(planetInfo[currentPlanet],110,120, canvasFullw - 200 - 20, canvasFullh - 100 - (buttonSize + 110) - 40);
   }
   else{
+    //console.log("Delta: " + deltaTime);
+    theta = theta + deltaTime;
     //create sun at center
     fill("orange");
     circle(canvasFullw/2,canvasFullh/2,sunSize);
@@ -119,6 +120,7 @@ function draw() {
     //console.log("Uranus is at: " + thetaSign[i]*(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta)) + 50) + ", " + canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta))));
     }
     textAlign(CENTER);
+    textSize(20);
     for(var i = 0; i < 8; i++){
       //create buttons for each planet
       fill("gray");
