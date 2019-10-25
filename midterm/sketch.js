@@ -65,14 +65,15 @@ function draw() {
     //update theta
 
     //dummy object
-    //fill("blue");
-    //circle(canvasFullw/2 + 100*(cos(millis()*timeTheta)), canvasFullh/2 + 100*(sin(millis()*timeTheta)), 30);
+    var i = 2;
+    fill(planetColors[i]);
+    circle(canvasFullw/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(theta*timeTheta)), canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(sin(theta*timeTheta)),planetSizes[i]*planetSizeScale);
 
-    for(var i = 0; i < 8; i++){
+    /*for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
       fill(planetColors[i]);
       circle(canvasFullw/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(theta*timeTheta)), canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(sin(theta*timeTheta)),planetSizes[i]*planetSizeScale);
-    }
+    }*/
     //console.log("Uranus is at: " + thetaSign[i]*(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta)) + 50) + ", " + canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta))));
     fill("gray");
     for(var i = 0; i < 8; i++){
