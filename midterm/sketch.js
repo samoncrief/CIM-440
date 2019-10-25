@@ -150,8 +150,9 @@ function keyPressed(){
   if(key == ' '){
     infoDisplay = !infoDisplay;
   }
-  else if(key > 0 && key < 9){
-    currentPlanet = value - 1;
+  else if(key > '0' && key < '9'){
+    //currentPlanet = key - 1;
+    console.log(0+key);
     infoDisplay = true;
   }
 }
