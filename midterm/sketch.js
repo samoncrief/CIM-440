@@ -3,7 +3,7 @@ var canvasFullh = 800;
 var sunSize = 100;
 //planet size and color variables
 var planetSizes = [0.38,0.95,1,.53,11.2,9.45,4,3.88];
-var planetSizeScale = 8;
+var planetSizeScale = 5;
 var planetDistances = [35.98,67.24,92.96,141.6,483.8,890.8,1784,2793];
 var planetDistanceScale = 300/2793;
 
