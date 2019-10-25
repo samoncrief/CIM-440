@@ -36,6 +36,9 @@ var infoDisplay;
 var planetInfo = ["Me,Ve,Ea,Ma,Ju,Sa,Ur,Ne"];
 var currentPlanet;
 
+var buttonSize = 100;
+var buttonSpace = 200/7;
+
 function setup() {
   // put setup code here
   createCanvas(canvasFullw, canvasFullh);
@@ -80,10 +83,16 @@ function draw() {
       var pSize = sqrt(planetSizes[i])*planetSizeScale;
       fill(planetColors[i]);
       circle(locX, locY, pSize);
+      if(i == 2){
+        fill("green");
+        strokeWeight(0);
+        circle(locX, locY, pSize*0.5);
+        strokeWeight(1);
+      }
       if(i == 5){
         stroke("orange");
         strokeWeight(3);
-        line(locX - pSize*0.5, locY + pSize*0.1, locX + pSize*0.5, locY - pSize*0.1);
+        line(locX - pSize*0.75, locY + pSize*0.3, locX + pSize*0.75, locY - pSize*0.3);
         stroke("black");
         strokeWeight(1);
       }
@@ -92,7 +101,7 @@ function draw() {
     fill("gray");
     for(var i = 0; i < 8; i++){
       //create buttons for each planet (also the sun? update limit)
-      rect(80+(i*160),canvasFullh - 90,80,80);
+      rect(100+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize + 10),buttonSize,buttonSize);
     }
   }
 
