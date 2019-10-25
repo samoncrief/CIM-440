@@ -75,8 +75,18 @@ function draw() {
 
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
+      var locX = canvasFullw/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(theta*timeTheta/planetYears[i]));
+      var locY = canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(sin(theta*timeTheta/planetYears[i]));
+      var pSize = sqrt(planetSizes[i])*planetSizeScale;
       fill(planetColors[i]);
-      circle(canvasFullw/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(theta*timeTheta/planetYears[i])), canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(sin(theta*timeTheta/planetYears[i])),sqrt(planetSizes[i])*planetSizeScale);
+      circle(locX, locY, pSize);
+      if(i == 5){
+        stroke("orange");
+        strokeWeight(3);
+        line(locX - pSize, locY + pSize, locX + pSize, locY - pSize);
+        stroke("black");
+        strokeWeight(1);
+      }
     }
     //console.log("Uranus is at: " + thetaSign[i]*(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta)) + 50) + ", " + canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta))));
     fill("gray");
