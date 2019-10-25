@@ -7,6 +7,8 @@ var planetSizeScale = 5;
 var planetDistances = [35.98,67.24,92.96,141.6,483.8,890.8,1784,2793];
 var planetDistanceScale = 300/2793;
 
+var planetSpeeds = [58,116,1,1,10/24,11/24,17/24,16/24];
+
 /// Planet sizes and distances:
 
 /// Mercury: 2440km (.38), 35.98 mil.mi
@@ -73,7 +75,7 @@ function draw() {
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
       fill(planetColors[i]);
-      circle(canvasFullw/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(theta*timeTheta)), canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(sin(theta*timeTheta)),sqrt(planetSizes[i])*planetSizeScale);
+      circle(canvasFullw/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(planetSpeeds[i]*theta*timeTheta)), canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(sin(planetSpeeds[i]*theta*timeTheta)),sqrt(planetSizes[i])*planetSizeScale);
     }
     //console.log("Uranus is at: " + thetaSign[i]*(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta)) + 50) + ", " + canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta))));
     fill("gray");
