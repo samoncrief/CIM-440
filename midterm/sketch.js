@@ -146,11 +146,11 @@ function mousePressed(){
 }
 
 function keyPressed(){
-  if(key == 32){
+  if(value == 32){
     infoDisplay = !infoDisplay;
   }
-  else if(key > 48 && key < 57){
-    currentPlanet = key - 49;
+  else if(value > 48 && value < 57){
+    currentPlanet = value - 49;
     infoDisplay = true;
   }
 }
