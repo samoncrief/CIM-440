@@ -64,8 +64,8 @@ function draw() {
   theta = theta + deltaTime;
   if (true){
     //display info for current selection
-    stroke(planetColors[currentPlanet]);
-    strokeWeight(10);
+    fill(planetColors[currentPlanet]);
+    rect(100-10, 100-10, 20+canvasFullw - 200, 20+canvasFullh - 100 - (buttonSize + 110));
     fill("gray");
     rect(100,100,canvasFullw - 200, canvasFullh - 100 - (buttonSize + 110));
   }
