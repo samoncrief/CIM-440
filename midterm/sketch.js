@@ -99,13 +99,14 @@ function draw() {
       }
     }
     //console.log("Uranus is at: " + thetaSign[i]*(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta)) + 50) + ", " + canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta))));
+    }
+    textAlign(CENTER);
     for(var i = 0; i < 8; i++){
       //create buttons for each planet
       fill("gray");
       rect(100+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize + 10),buttonSize,buttonSize);
       fill("black");
       text(planetNames[i],100+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize/2 + 10));
-    }
   }
 
 }
