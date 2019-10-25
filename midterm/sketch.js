@@ -7,7 +7,7 @@ var planetSizeScale = 5;
 var planetDistances = [35.98,67.24,92.96,141.6,483.8,890.8,1784,2793];
 var planetDistanceScale = 300/2793;
 
-var planetDays = [58,116,1,1,10/24,11/24,17/24,16/24];
+//var planetDays = [58,116,1,1,10/24,11/24,17/24,16/24];
 var planetYears = [88/365,225/365,1,687/365,12,29,84,165];
 
 /// Planet sizes and distances:
@@ -34,7 +34,16 @@ var thetaSign = [1,-1,1,-1,1,-1,1,-1];
 var infoDisplay;
 //planet info array
 var planetNames = ["Mercury","Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
-var planetInfo = ["Me,Ve,Ea,Ma,Ju,Sa,Ur,Ne"];
+var planetInfo = [
+  "Mercury\nMercury is both the smallest planet and the closest planet to the Sun.\n1 Mercury Day = 59 Earth Days\n1 Mercury Year = 88 Earth Days",
+  "Venus\nThe second planet from the Sun is known for its odd rotation, going East-West instead of the reverse. A day on Venus is longer than a year, and hurricane-force winds blow across its surface.\n1 Venus Day = 243 Earth Days\n1 Venus Year = 225 Earth Days",
+  "Earth\nOnce thought to be the center of the universe, the third planet is unique with its lush greenery and intelligent life.\n1 Earth Day = 24 Earth Hours\n1 Earth Year = 365.25 Earth Days",
+  "Mars\nThe red color of the Martian surface comes from the oxidation of iron in Mars' soil. It is a cold desert with a thin atmosphere.\n1 Mars Day = 1 Earth Day\n1 Mars Year = 687 Earth Days",
+  "Jupiter\nThe largest planet in our solar system is actually mostly gas, specifically hydrogen and helium. It boasts over 75 moons in its orbit.\n1 Jupiter Day = 10 Earth Days\n1 Jupiter Year = 12 Earth Years",
+  "Saturn\nSaturn may be a gas giant, but its many complex rings of ice and rock are quite solid.\n1 Saturn Day = 10.7 Earth Days\n1 Saturn year = 29 Earth Years",
+  "Uranus\nThis ice giant is made largely of water, methane, and ammonia. Uranus not only rotates East-West like Venus, but it rotates on its side as well.\n1 Uranus Day = 17 Earth Hours\n1 Uranus Year = 84 Earth Years",
+  "Neptune\nSomewhat fittingly, this deep blue ice giant, farther from the Sun than any other true planet in our solar system, is named after the Roman god of the ocean depths.\n1 Neptune Day = 16 Earth Hours\n1 Neptune Year = 165 Earth Years"
+];
 var currentPlanet = 3;
 
 var buttonSize = 100;
@@ -68,6 +77,9 @@ function draw() {
     rect(100-10, 100-10, 20+canvasFullw - 200, 20+canvasFullh - 100 - (buttonSize + 110));
     fill("gray");
     rect(100,100,canvasFullw - 200, canvasFullh - 100 - (buttonSize + 110));
+    fill("black");
+    textAlign(LEFT);
+    text(planetInfo[i],110,110);
   }
   else{
     //create sun at center
