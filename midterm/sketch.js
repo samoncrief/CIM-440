@@ -98,8 +98,8 @@ function draw() {
     strokeWeight(1);
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
-      var locX = canvasFullw/2 + (planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(theta*timeTheta/planetYears[i]));
-      var locY = canvasFullh/2 + (planetDistances[i]*planetDistanceScale + sunSize/2)*(sin(theta*timeTheta/planetYears[i]));
+      var locX = canvasFullw/2 - (planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(theta*timeTheta/planetYears[i]));
+      var locY = canvasFullh/2 - (planetDistances[i]*planetDistanceScale + sunSize/2)*(sin(theta*timeTheta/planetYears[i]));
       var pSize = sqrt(planetSizes[i])*planetSizeScale;
       fill(planetColors[i]);
       circle(locX, locY, pSize);
