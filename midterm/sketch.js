@@ -21,7 +21,7 @@ var planetYears = [88/365,225/365,1,687/365,12,29,84,165];
 /// Uranus: 25632km (4), 1.784 bil.mi
 /// Neptune: 24622km (3.88), 2.793 bil.mi
 
-var planetColors = [("gray"),("tan"),("blue"),("red"),("orange"),("tan"),("teal"),("blue")];
+var planetColors = [("gray"),("tan"),("blue"),("red"),("orange"),("tan"),("teal"),("blue"),("white")];
 //previous time
 var prevTime;
 //delta time
@@ -31,7 +31,7 @@ var timeTheta = 1;
 var theta = 0;
 var thetaSign = [1,-1,1,-1,1,-1,1,-1];
 //display window boolean
-var infoDisplay = false;
+var infoDisplay = true;
 //planet info array
 var planetNames = ["Mercury","Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
 var planetInfo = [
@@ -42,9 +42,10 @@ var planetInfo = [
   "Jupiter\nThe largest planet in our solar system is actually mostly gas, specifically hydrogen and helium. It boasts over 75 moons in its orbit.\n1 Jupiter Day = 10 Earth Days\n1 Jupiter Year = 12 Earth Years",
   "Saturn\nSaturn may be a gas giant, but its many complex rings of ice and rock are quite solid.\n1 Saturn Day = 10.7 Earth Days\n1 Saturn year = 29 Earth Years",
   "Uranus\nThis ice giant is made largely of water, methane, and ammonia. Uranus not only rotates East-West like Venus, but it rotates on its side as well.\n1 Uranus Day = 17 Earth Hours\n1 Uranus Year = 84 Earth Years",
-  "Neptune\nSomewhat fittingly, this deep blue ice giant, farther from the Sun than any other true planet in our solar system, is named after the Roman god of the ocean depths.\n1 Neptune Day = 16 Earth Hours\n1 Neptune Year = 165 Earth Years"
+  "Neptune\nSomewhat fittingly, this deep blue ice giant, farther from the Sun than any other true planet in our solar system, is named after the Roman god of the ocean depths.\n1 Neptune Day = 16 Earth Hours\n1 Neptune Year = 165 Earth Years",
+  "Welcome to the interactive solar system! You can open info on any planet by clicking on the button or pressing the associated number. Clicking anywhere other than the buttons will close a window, and the space bar will toggle the info window display."
 ];
-var currentPlanet = 1;
+var currentPlanet = 8;
 
 var buttonSize = 100;
 var buttonSpace = 200/7;
@@ -128,7 +129,10 @@ function draw() {
       fill("black");
       text(planetNames[i],100+buttonSize/2+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize/2 + 10));
       text(i+1,100+buttonSize/2+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize/2 + 10)+(buttonSize/4));
-  }
+    }
+    textSize(50);
+    fill("white");
+    text("INTERACTIVE SOLAR SYSTEM", canvasFullw/2, 50);
 
 }
 
@@ -151,7 +155,32 @@ function keyPressed(){
     infoDisplay = !infoDisplay;
   }
   else if(key > '0' && key < '9'){
-    currentPlanet = key - 1;
+    switch(key){
+      case '2':
+        currentPlanet = 1;
+        break;
+      case '3':
+        currentPlanet = 2;
+        break;
+      case '4':
+        currentPlanet = 3;
+        break;
+      case '5':
+        currentPlanet = 4;
+        break;
+      case '6':
+        currentPlanet = 5;
+        break;
+      case '7':
+        currentPlanet = 6;
+        break;
+      case '8':
+        currentPlanet = 7;
+        break;
+      default:
+        currentPlanet = 0;
+        break;
+    }
     //console.log(1.0+key-1.0);
     infoDisplay = true;
   }
