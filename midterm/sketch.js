@@ -83,7 +83,7 @@ function draw() {
       if(i == 5){
         stroke("orange");
         strokeWeight(3);
-        line(locX - pSize, locY + pSize, locX + pSize, locY - pSize);
+        line(locX - pSize*0.5, locY + pSize*0.1, locX + pSize*0.5, locY - pSize*0.1);
         stroke("black");
         strokeWeight(1);
       }
