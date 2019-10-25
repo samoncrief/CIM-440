@@ -35,7 +35,7 @@ var infoDisplay;
 //planet info array
 var planetNames = ["Mercury","Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
 var planetInfo = ["Me,Ve,Ea,Ma,Ju,Sa,Ur,Ne"];
-var currentPlanet;
+var currentPlanet = 0;
 
 var buttonSize = 100;
 var buttonSpace = 200/7;
@@ -62,8 +62,12 @@ function draw() {
   prevTime = millis();
   //console.log("Delta: " + deltaTime);
   theta = theta + deltaTime;
-  if (false){
+  if (true){
     //display info for current selection
+    stroke(planetColors[currentPlanet]);
+    strokeWeight(10);
+    fill("gray");
+    rect(100,100,canvasFullw - 200, canvasFullh - 100 - (buttonSize + 110));
   }
   else{
     //create sun at center
@@ -76,7 +80,8 @@ function draw() {
     fill(planetColors[i]);
     circle(canvasFullw/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(theta*timeTheta)), canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(sin(theta*timeTheta)),planetSizes[i]*planetSizeScale);
     */
-
+    stroke("black");
+    strokeWeight(1);
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
       var locX = canvasFullw/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(theta*timeTheta/planetYears[i]));
