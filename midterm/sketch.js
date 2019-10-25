@@ -147,11 +147,11 @@ function mousePressed(){
 
 function keyPressed(){
   console.log(key);
-  if(key == 32){
+  if(key == ' '){
     infoDisplay = !infoDisplay;
   }
-  else if(key > 48 && key < 57){
-    currentPlanet = value - 49;
+  else if(key > 0 && key < 9){
+    currentPlanet = value - 1;
     infoDisplay = true;
   }
 }
