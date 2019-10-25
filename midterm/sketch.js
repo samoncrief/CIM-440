@@ -54,6 +54,7 @@ function setup() {
   createCanvas(canvasFullw, canvasFullh);
   prevTime = millis();
   timeTheta = 1/20;
+  textSize(20);
 }
 
 function draw() {
@@ -79,7 +80,7 @@ function draw() {
     rect(100,100,canvasFullw - 200, canvasFullh - 100 - (buttonSize + 110));
     fill("black");
     textAlign(LEFT);
-    text(planetInfo[currentPlanet],110,110);
+    text(planetInfo[currentPlanet],110,120, canvasFullw - 200 - 20, canvasFullh - 100 - (buttonSize + 110) - 40);
   }
   else{
     //create sun at center
