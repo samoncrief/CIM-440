@@ -31,7 +31,7 @@ var timeTheta = 1;
 var theta = 0;
 var thetaSign = [1,-1,1,-1,1,-1,1,-1];
 //display window boolean
-var infoDisplay;
+var infoDisplay = false;
 //planet info array
 var planetNames = ["Mercury","Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
 var planetInfo = [
@@ -44,7 +44,7 @@ var planetInfo = [
   "Uranus\nThis ice giant is made largely of water, methane, and ammonia. Uranus not only rotates East-West like Venus, but it rotates on its side as well.\n1 Uranus Day = 17 Earth Hours\n1 Uranus Year = 84 Earth Years",
   "Neptune\nSomewhat fittingly, this deep blue ice giant, farther from the Sun than any other true planet in our solar system, is named after the Roman god of the ocean depths.\n1 Neptune Day = 16 Earth Hours\n1 Neptune Year = 165 Earth Years"
 ];
-var currentPlanet = 3;
+var currentPlanet = 1;
 
 var buttonSize = 100;
 var buttonSpace = 200/7;
@@ -70,7 +70,7 @@ function draw() {
   //update previous time
   prevTime = millis();
 
-  if (true){
+  if (infoDisplay){
     //display info for current selection
     fill(planetColors[currentPlanet]);
     rect(100-10, 100-10, 20+canvasFullw - 200, 20+canvasFullh - 100 - (buttonSize + 110));
@@ -130,4 +130,27 @@ function draw() {
       text(i+1,100+buttonSize/2+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize/2 + 10)+(buttonSize/4));
   }
 
+}
+
+function mousePressed(){
+  var hide = true;
+  for(var i = 0; i < 8; i++){
+    var locX = 100+(i*(buttonSize+buttonSpace));
+    var locY = canvasFullh - (buttonSize + 10);
+    if(mouseX > locX && mouseX < locX + buttonSize && mouseY > locY && mouseY < locY + buttonSize){
+      hide = false;
+      currentPlanet = i;
+    }
+  }
+  infoDisplay = !hide;
+}
+
+function keyPressed(){
+  if(key == 32){
+    infoDisplay = !infoDisplay;
+  }
+  else if(key > 48 && key < 57){
+    currentPlanet = key - 49;
+    infoDisplay = true;
+  }
 }
