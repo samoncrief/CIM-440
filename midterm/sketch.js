@@ -1,5 +1,6 @@
 var canvasFullw = 1200;
 var canvasFullh = 800;
+var sunSize = 100;
 //planet size and color variables
 var planetSizes = [0.38,0.95,1,.53,11.2,9.45,4,3.88];
 var planetSizeScale = 8;
@@ -60,7 +61,7 @@ function draw() {
   else{
     //create sun at center
     fill("orange");
-    circle(canvasFullw/2,canvasFullh/2,100);
+    circle(canvasFullw/2,canvasFullh/2,sunSize);
     //update theta
 
     //dummy object
@@ -70,9 +71,9 @@ function draw() {
     for(var i = 0; i < 8; i++){
       //create planet[i] at x*cos(theta),y*sin(theta)
       fill(planetColors[i]);
-      circle(canvasFullw/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta))), canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta))),planetSizes[i]*planetSizeScale);
+      circle(canvasFullw/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(cos(theta*timeTheta)), canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale + sunSize/2)*(sin(theta*timeTheta)),planetSizes[i]*planetSizeScale);
     }
-    console.log("Uranus is at: " + thetaSign[i]*(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta))) + ", " + canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta))));
+    //console.log("Uranus is at: " + thetaSign[i]*(canvasFullw/2 + planetDistances[i]*planetDistanceScale*(cos(theta*timeTheta)) + 50) + ", " + canvasFullh/2 + thetaSign[i]*(planetDistances[i]*planetDistanceScale*(sin(theta*timeTheta))));
     fill("gray");
     for(var i = 0; i < 8; i++){
       //create buttons for each planet (also the sun? update limit)
