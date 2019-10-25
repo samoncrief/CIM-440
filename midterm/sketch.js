@@ -151,8 +151,8 @@ function keyPressed(){
     infoDisplay = !infoDisplay;
   }
   else if(key > '0' && key < '9'){
-    //currentPlanet = key - 1;
-    console.log(1.0+key-1.0);
+    currentPlanet = key - 1;
+    //console.log(1.0+key-1.0);
     infoDisplay = true;
   }
 }
