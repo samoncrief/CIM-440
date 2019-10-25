@@ -106,7 +106,7 @@ function draw() {
       fill("gray");
       rect(100+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize + 10),buttonSize,buttonSize);
       fill("black");
-      text(planetNames[i],100+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize/2 + 10));
+      text(planetNames[i],100+buttonSize/2+(i*(buttonSize+buttonSpace)),canvasFullh - (buttonSize/2 + 10));
   }
 
 }
