@@ -52,6 +52,9 @@ var buttonSpace = 200/7;
 function setup() {
   // put setup code here
   createCanvas(canvasFullw, canvasFullh);
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
   prevTime = millis();
   timeTheta = 1/20;
 }
@@ -72,14 +75,7 @@ function draw() {
 
   if (infoDisplay){
     //display info for current selection
-    fill(planetColors[currentPlanet]);
-    rect(100-10, 100-10, 20+canvasFullw - 200, 20+canvasFullh - 100 - (buttonSize + 110));
-    fill("gray");
-    rect(100,100,canvasFullw - 200, canvasFullh - 100 - (buttonSize + 110));
-    fill("black");
-    textAlign(LEFT);
-    textSize(40);
-    text(planetInfo[currentPlanet],110,120, canvasFullw - 200 - 20, canvasFullh - 100 - (buttonSize + 110) - 40);
+    displayInfo();
   }
   else{
     //console.log("Delta: " + deltaTime);
@@ -132,6 +128,17 @@ function draw() {
     textSize(50);
     fill("white");
     text("INTERACTIVE SOLAR SYSTEM", canvasFullw/2, 50);
+
+    function displayInfo(){
+      fill(planetColors[currentPlanet]);
+      rect(100-10, 100-10, 20+canvasFullw - 200, 20+canvasFullh - 100 - (buttonSize + 110));
+      fill("gray");
+      rect(100,100,canvasFullw - 200, canvasFullh - 100 - (buttonSize + 110));
+      fill("black");
+      textAlign(LEFT);
+      textSize(40);
+      text(planetInfo[currentPlanet],110,120, canvasFullw - 200 - 20, canvasFullh - 100 - (buttonSize + 110) - 40);
+    }
 
 }
 
