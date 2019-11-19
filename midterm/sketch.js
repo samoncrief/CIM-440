@@ -51,7 +51,7 @@ var buttonSpace = 200/7;
 
 function setup() {
   // put setup code here
-  createCanvas(canvasFullw, canvasFullh);
+  var cnv = createCanvas(canvasFullw, canvasFullh);
   var x = (windowWidth - width) / 2;
   var y = (windowHeight - height) / 2;
   cnv.position(x, y);
