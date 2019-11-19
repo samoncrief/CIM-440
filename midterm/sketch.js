@@ -52,8 +52,8 @@ var buttonSpace = 200/7;
 function setup() {
   // put setup code here
   var cnv = createCanvas(canvasFullw, canvasFullh);
-  var x = (windowWidth - width) / 2;
-  var y = (windowHeight - height) / 2;
+  var x = (windowWidth - canvasFullw) / 2;
+  var y = (windowHeight - canvasFullh) / 2;
   cnv.position(x, y);
   prevTime = millis();
   timeTheta = 1/20;
