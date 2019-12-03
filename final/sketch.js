@@ -1,4 +1,4 @@
-var canvasFull = 500;
+var canvasFull = 800;
 
 var blockArray = {};
 
