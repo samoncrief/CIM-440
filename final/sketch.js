@@ -14,7 +14,7 @@ var player = null;
 function setup() {
   // put setup code here
   createCanvas(canvasFull, canvasFull);
-  background(0, 255, 0);
+  background(0, 0, 0);
 }
 
 function draw() {
