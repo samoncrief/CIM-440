@@ -38,7 +38,7 @@ function draw() {
       //main game loop
 
       //move sprites
-      player.velocity.x = (mouseX-asterisk.position.x)/10;
+      player.velocity.x = (mouseX-player.position.x)/10;
 
       //collisions
 
