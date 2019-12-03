@@ -44,7 +44,8 @@ function draw() {
 
       //move sprites
       player.velocity.x = (mouseX-player.position.x)/10;
-      wall.velocity.y = 10;
+      player.velocity.y = (canvasFull/2 - player.position.y)/10;
+      wall.velocity.y = 5;
       if(wall.position.y > 950){
         wall.position.y = -200;
       }
