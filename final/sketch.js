@@ -14,7 +14,6 @@ var player = null;
 function setup() {
   // put setup code here
   createCanvas(canvasFull, canvasFull);
-  background(0, 0, 0);
 
   player = createSprite(canvasFull/2,canvasFull/2,127,127);
   player.addAnimation('normal', 'boxGreen.png');
@@ -23,6 +22,7 @@ function setup() {
 function draw() {
   // put drawing code here
   // default fill,stroke,strokeWeight
+  background(0, 0, 0);
   fill(255);
   stroke("black");
   strokeWeight(1);
