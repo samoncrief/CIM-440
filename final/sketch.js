@@ -17,6 +17,9 @@ function setup() {
 
   player = createSprite(canvasFull/2,canvasFull/2,127,127);
   player.addAnimation('normal', 'boxGreen.png');
+
+  wall = createSprite(canvasFull/2,-200,127,127);
+  wall.addAnimation('normal','boxYellow.png');
 }
 
 function draw() {
@@ -41,8 +44,13 @@ function draw() {
 
       //move sprites
       player.velocity.x = (mouseX-player.position.x)/10;
+      wall.velocity.y = -10;
+      if(wall.position.y > 950){
+        wall.position.y = -200;
+      }
 
       //collisions
+      player.collide(wall);
 
       //if player goes out of bounds, they lose
 
