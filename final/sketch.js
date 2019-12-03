@@ -49,6 +49,7 @@ function draw() {
   }
 
   //draw sprites
+  drawSprites();
 }
 
 function mouseClicked(){
