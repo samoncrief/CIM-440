@@ -15,6 +15,9 @@ function setup() {
   // put setup code here
   createCanvas(canvasFull, canvasFull);
   background(0, 0, 0);
+
+  player = createSprite(canvasFull/2,canvasFull/2,127,127);
+  player.addAnimation('normal', 'boxGreen.png');
 }
 
 function draw() {
@@ -31,8 +34,7 @@ function draw() {
   else{
     if(player == null){
       //initialize game
-      player = createSprite(canvasFull/2,canvasFull/2,127,127);
-      player.addAnimation('normal', 'boxGreen.png');
+
     }
     else{
       //main game loop
