@@ -31,7 +31,7 @@ function draw() {
   else{
     if(player == null){
       //initialize game
-      player = createSprite(400, 200);
+      player = createSprite(canvasFull/2,canvasFull/2,127,127);
       player.addAnimation('normal', 'boxGreen.png');
     }
     else{
