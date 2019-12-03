@@ -1,10 +1,21 @@
-var eyeSize = 120;
-
-var center = 250;
-var headSize = 400;
-var eyeHeight = 160
 var canvasFull = 500;
 
+var blockArray = {
+  [0],
+  [0],
+  [0],
+  [0],
+  [0]
+};
+
+function blockForm(entry){
+  this.entry = entry % 5;
+  this.exit = (Math.random() * blockArray[this.entry].length) % blockArray[this.entry].length;
+  this.sprite = blockArray[this.entry][this.exit];
+}
+
+var menu = false;
+var player = null;
 
 function setup() {
   // put setup code here
@@ -18,21 +29,34 @@ function draw() {
   fill(255);
   stroke("black");
   strokeWeight(1);
-  //left eye
-  //ellipse(100,100,20,20);
-  //right eye
-  //ellipse(140,100,20,20);
 
-  fill("yellow");
-  ellipse(center,center,headSize,headSize);
+  //main loop
+  if(menu){
+    //initial menu
+  }
+  else{
+    if(player == null){
+      //initialize game
+      player = createSprite(400, 200);
+      player.addAnimation('normal', 'boxGreen.png');
+    }
+    else{
+      //main game loop
 
-  fill(255);//rgb
-  //left eye
-  ellipse(center-(10+eyeSize/2), eyeHeight, eyeSize, eyeSize);
-  //right eye
-  ellipse(center+(10+eyeSize/2), eyeHeight, eyeSize, eyeSize);
+      //move sprites
+      player.velocity.x = (mouseX-asterisk.position.x)/10;
 
-  strokeWeight(50);
-  point(center-(10+eyeSize/2),eyeHeight);
-  point(center+(10+eyeSize/2),eyeHeight);
+      //collisions
+
+      //if player goes out of bounds, they lose
+
+      //draw time along top of canvas
+    }
+  }
+
+  //draw sprites
+}
+
+function mouseClicked(){
+  //pause/unpause game on mouse click
 }
