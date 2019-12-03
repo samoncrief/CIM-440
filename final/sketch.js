@@ -1,12 +1,6 @@
 var canvasFull = 500;
 
-var blockArray = {
-  [0],
-  [0],
-  [0],
-  [0],
-  [0]
-};
+var blockArray = {};
 
 function blockForm(entry){
   this.entry = entry % 5;
