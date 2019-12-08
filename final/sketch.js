@@ -102,7 +102,7 @@ function createRow(index){
     case 12:
       //mid/right, take
     default:
-      createBlock(0,-127);
+      createBlock(127,127);
       //createBlock(canvasFull,-127);
   }
 }
