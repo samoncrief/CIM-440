@@ -101,6 +101,6 @@ function createRow(index){
       //mid/right, take
     default:
       createBlock(0,-127);
-      createBlock(canvasFull,-127);
+      //createBlock(canvasFull,-127);
   }
 }
