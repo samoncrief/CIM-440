@@ -70,7 +70,7 @@ function createBlock(X, Y){
   block = createSprite(X,Y,127,127);
   block.addAnimation('normal','boxYellow.png');
   block.velocity.y = 5;
-  block.life = 500;
+  block.life = 50;
   blocks.add(block);
   row = block;
   console.log("Created block at " + X + ", " + Y);
@@ -103,7 +103,7 @@ function createRow(index){
     case 12:
       //mid/right, take
     default:
-      createBlock(127,127);
-      //createBlock(canvasFull,-127);
+      createBlock(0,-127);
+      createBlock(canvasFull,-127);
   }
 }
