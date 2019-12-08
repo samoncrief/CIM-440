@@ -6,6 +6,8 @@ var menu = false;
 var player = null;
 var row = null;
 
+var lastRow = 0;
+
 function setup() {
   // put setup code here
   createCanvas(canvasFull, canvasFull);
@@ -38,11 +40,9 @@ function draw() {
     }
     else{
       //main game loop
-      if(row == null){
+      if(millis - lastRow > 100){
         createRow(0);
-      }
-      else if(row.position.y > 0){
-        createRow(0);
+        lastRow = millis;
       }
 
       //move sprites
