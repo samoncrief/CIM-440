@@ -1,10 +1,9 @@
 var canvasFull = 800;
 
-var blockArray = {};
-
 var menu = false;
 var player = null;
 var row = null;
+var blocks = new Group();
 
 var lastRow = 0;
 
@@ -15,7 +14,7 @@ function setup() {
   player = createSprite(canvasFull/2,canvasFull/2,127,127);
   player.addAnimation('normal', 'boxGreen.png');
 
-  blocks = new Group();
+
 
   //instantiate wall configurations
   blockArray = new Array(new Array(),new Array(),new Array(),new Array(),new Array());
@@ -41,6 +40,7 @@ function draw() {
     else{
       //main game loop
       if(millis() - lastRow > 1000){
+        console.log("Row is at " + row.position.y);
         createRow(0);
         lastRow = millis();
       }
