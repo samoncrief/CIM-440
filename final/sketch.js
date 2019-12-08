@@ -73,6 +73,7 @@ function createBlock(X, Y){
   block.life = 500;
   blocks.add(block);
   row = block;
+  console.log("Created block at " + X + ", " + Y);
 }
 
 function createRow(index){
