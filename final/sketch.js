@@ -70,10 +70,10 @@ function createBlock(X, Y){
   block = createSprite(X,Y,127,127);
   block.addAnimation('normal','boxYellow.png');
   block.velocity.y = 5;
-  block.life = 50;
+  block.life = 500;
   blocks.add(block);
   row = block;
-  console.log("Created block at " + X + ", " + Y);
+  //console.log("Created block at " + X + ", " + Y);
 }
 
 function createRow(index){
