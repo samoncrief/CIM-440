@@ -40,7 +40,7 @@ function draw() {
     }
     else{
       //main game loop
-      if(millis() - lastRow > 100){
+      if(millis() - lastRow > 1000){
         createRow(0);
         lastRow = millis();
       }
