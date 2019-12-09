@@ -44,7 +44,7 @@ function draw() {
     }
     else{
       //main game loop
-      if(millis() - lastRow > 465){
+      if(millis() - lastRow > 450){
         //console.log("Row is at " + row.position.y);
         if(increment == 0){
           if(wall){
@@ -72,12 +72,7 @@ function draw() {
       }
 
       //move sprites
-      var toMove = mouseX - player.position.x;
-      if (toMove < -190)
-        toMove = -190;
-      else if (toMove > 190)
-        toMove = 190;
-      player.velocity.x = (toMove)/10;
+      player.velocity.x = (mouseX-player.position.x)/10;
       player.velocity.y = (canvasFull/2 - player.position.y)/50;
 
       //collisions
