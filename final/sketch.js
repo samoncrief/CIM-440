@@ -87,9 +87,9 @@ function createBlock(indexB){
 }
 
 function createRow(index){
+  createBlock(0);
+  createBlock(6);
   switch(index){
-    createBlock(0);
-    createBlock(6);
     case 1:
       //wall in middle
       blocks.add(createBlock(3));
