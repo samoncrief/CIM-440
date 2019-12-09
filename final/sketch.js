@@ -42,7 +42,7 @@ function draw() {
       if(millis() - lastRow > 465){
         //console.log("Row is at " + row.position.y);
         if(increment == 0){
-          createRow(1);
+          createRow(random(ints6)+1);
           increment++;
         }
         else{
@@ -96,36 +96,42 @@ function createRow(index){
     case 1:
       //wall in middle
       blocks.add(createBlock(3));
+      break;
     case 2:
       //leftmost exit
       blocks.add(createBlock(2));
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
       blocks.add(createBlock(5));
+      break;
     case 3:
       //left exit
       blocks.add(createBlock(1));
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
       blocks.add(createBlock(5));
+      break;
     case 4:
       //middle exit
       blocks.add(createBlock(1));
       blocks.add(createBlock(2));
       blocks.add(createBlock(4));
       blocks.add(createBlock(5));
+      break;
     case 5:
       //right exit
       blocks.add(createBlock(1));
       blocks.add(createBlock(2));
       blocks.add(createBlock(3));
       blocks.add(createBlock(5));
+      break;
     case 6:
       //rightmost exit
       blocks.add(createBlock(1));
       blocks.add(createBlock(2));
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
+      break;
     case 7:
       //left/mid, take left
     case 8:
