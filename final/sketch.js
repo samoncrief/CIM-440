@@ -36,7 +36,7 @@ function draw() {
     }
     else{
       //main game loop
-      if(millis() - lastRow > 1000){
+      if(millis() - lastRow > 500){
         //console.log("Row is at " + row.position.y);
         createRow(0);
         lastRow = millis();
@@ -67,7 +67,7 @@ function createBlock(X, Y){
   block = createSprite(X,Y,127,127);
   block.addAnimation('normal','boxYellow.png');
   block.velocity.y = 5;
-  block.life = 200;
+  block.life = 150;
   blocks.add(block);
   row = block;
   //console.log("Created block at " + X + ", " + Y);
@@ -101,6 +101,6 @@ function createRow(index){
       //mid/right, take
     default:
       createBlock(0,-127);
-      //createBlock(canvasFull,-127);
+      createBlock(canvasFull,-127);
   }
 }
