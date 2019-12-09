@@ -46,6 +46,7 @@ function draw() {
         else{
           createRow(0);
           increment++;
+          increment%10;
         }
         lastRow = millis();
       }
