@@ -48,6 +48,10 @@ function draw() {
 
       //collisions
       player.collide(blocks);
+      if(player.position.x < 64)
+        player.position.x = 64;
+      if(player.position.x > canvasFull - 64)
+        player.position.x = canvasFull - 64;
 
       //if player goes out of bounds, they lose
 
