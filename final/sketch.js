@@ -82,7 +82,8 @@ function draw() {
       if(player.position.x > canvasFull - 128)
         player.position.x = canvasFull - 128;
 
-      player.bounce(blocks);
+      if(player.collide(blocks))
+        player.velocity.x = 0;
 
       //if player goes out of bounds, they lose
 
