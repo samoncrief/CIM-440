@@ -102,6 +102,7 @@ function createBlock(indexB){
   block = createSprite(indexB * 127,-127,127,127);
   block.addAnimation('normal','boxYellow.png');
   block.velocity.y = 5;
+  block.immovable = true;
   block.life = 185;
   row = block;
   return block;
