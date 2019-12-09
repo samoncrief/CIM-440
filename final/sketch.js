@@ -83,14 +83,15 @@ function draw() {
       if(player.position.x > canvasFull - 128)
         player.position.x = canvasFull - 128;
 
-      for(int i = 0; i < blocks.toArray().length(); i++){
-        if(player.velocity.x < 0 && blocks.toArray()[i].overlapPoint(player.position.x - 64,player.position.y)){
-          player.velocity.x = 0;
+      if(blocks)
+        for(int i = 0; i < blocks.toArray().length(); i++){
+          if(player.velocity.x < 0 && blocks.toArray()[i].overlapPoint(player.position.x - 64,player.position.y)){
+            player.velocity.x = 0;
+          }
+          else if(player.velocity.x > 0 && blocks.toArray()[i].overlapPoint(player.position.x + 64,player.position.y)){
+            player.velocity.x = 0;
+          }
         }
-        else if(player.velocity.x > 0 && blocks.toArray()[i].overlapPoint(player.position.x + 64,player.position.y)){
-          player.velocity.x = 0;
-        }
-      }
 
       //if player goes out of bounds, they lose
 
