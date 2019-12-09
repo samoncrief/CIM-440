@@ -36,6 +36,7 @@ function draw() {
     }
     else{
       //main game loop
+      player.collide(blocks);
       if(millis() - lastRow > 450){
         //console.log("Row is at " + row.position.y);
         createRow(0);
