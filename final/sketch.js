@@ -72,8 +72,8 @@ function draw() {
       }
 
       //move sprites
-      player.velocity.x = (mouseX-player.position.x)/100;
-      player.velocity.y = (canvasFull/2 - player.position.y)/50;
+      player.velocity.x = (mouseX-player.position.x)/20;
+      player.velocity.y = (canvasFull/2 - player.position.y)/100;
 
       //collisions
       player.collide(blocks);
