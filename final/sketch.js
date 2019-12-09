@@ -1,4 +1,4 @@
-var canvasFull = 800;
+var canvasFull = 762;
 
 var menu = false;
 var player = null;
@@ -67,14 +67,13 @@ function mouseClicked(){
   //pause/unpause game on mouse click
 }
 
-function createBlock(X, Y){
-  block = createSprite(X,Y,127,127);
+function createBlock(indexB){
+  block = createSprite(indexB * 127,-127,127,127);
   block.addAnimation('normal','boxYellow.png');
   block.velocity.y = 5;
   block.life = 185;
   blocks.add(block);
   row = block;
-  //console.log("Created block at " + X + ", " + Y);
 }
 
 function createRow(index){
@@ -104,7 +103,7 @@ function createRow(index){
     case 12:
       //mid/right, take
     default:
-      createBlock(0,-127);
-      createBlock(canvasFull,-127);
+      createBlock(0);
+      createBlock(4);
   }
 }
