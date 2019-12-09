@@ -76,15 +76,21 @@ function draw() {
       player.velocity.y = (canvasFull/2 - player.position.y)/50;
 
       //collisions
-      for(var i = 0; i < 10; i++){
-        player.collide(blocks);
-        player.update();
-      }
+      player.collide(blocks);
 
       if(player.position.x < 128)
         player.position.x = 128;
       if(player.position.x > canvasFull - 128)
         player.position.x = canvasFull - 128;
+
+      for(int i = 0; i < blocks.size(); i++){
+        if(player.velocity.x < 0 && blocks.toArray()[i].overlapPoint(player.position.x - 64,player.position.y)){
+          player.velocity.x = 0;
+        }
+        else if(player.velocity.x > 0 && blocks.toArray()[i].overlapPoint(player.position.x + 64,player.position.y)){
+          player.velocity.x = 0;
+        }
+      }
 
       //if player goes out of bounds, they lose
 
