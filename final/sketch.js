@@ -36,7 +36,7 @@ function draw() {
     }
     else{
       //main game loop
-      if(millis() - lastRow > 400){
+      if(millis() - lastRow > 450){
         //console.log("Row is at " + row.position.y);
         createRow(0);
         lastRow = millis();
