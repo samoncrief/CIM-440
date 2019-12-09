@@ -47,11 +47,13 @@ function draw() {
       player.velocity.y = (canvasFull/2 - player.position.y)/10;
 
       //collisions
+
+      if(player.position.x < 128)
+        player.position.x = 128;
+      if(player.position.x > canvasFull - 128)
+        player.position.x = canvasFull - 128;
+
       player.collide(blocks);
-      if(player.position.x < 127)
-        player.position.x = 127;
-      if(player.position.x > canvasFull - 127)
-        player.position.x = canvasFull - 127;
 
       //if player goes out of bounds, they lose
 
