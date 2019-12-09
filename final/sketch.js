@@ -74,8 +74,8 @@ function createBlock(indexB){
   block.addAnimation('normal','boxYellow.png');
   block.velocity.y = 5;
   block.life = 185;
-  blocks.add(block);
   row = block;
+  return block;
 }
 
 function createRow(index){
@@ -107,5 +107,6 @@ function createRow(index){
     default:
       createBlock(0);
       createBlock(6);
+      //blocks.add(block);
   }
 }
