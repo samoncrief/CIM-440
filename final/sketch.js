@@ -44,7 +44,7 @@ function draw() {
     }
     else{
       //main game loop
-      if(millis() - lastRow > 450){
+      if(millis() - lastRow > 400){
         //console.log("Row is at " + row.position.y);
         if(increment == 0){
           if(wall){
