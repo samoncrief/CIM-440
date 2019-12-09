@@ -76,7 +76,8 @@ function draw() {
       player.velocity.y = (canvasFull/2 - player.position.y)/50;
 
       //collisions
-      player.collide(blocks);
+      for(var i = 0; i < 10; i++)
+        player.collide(blocks);
 
       if(player.position.x < 128)
         player.position.x = 128;
