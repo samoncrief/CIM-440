@@ -37,7 +37,7 @@ function draw() {
     else{
       //main game loop
       player.collide(blocks);
-      if(millis() - lastRow > 450){
+      if(millis() - lastRow > 475){
         //console.log("Row is at " + row.position.y);
         createRow(0);
         lastRow = millis();
@@ -68,7 +68,7 @@ function createBlock(X, Y){
   block = createSprite(X,Y,127,127);
   block.addAnimation('normal','boxYellow.png');
   block.velocity.y = 5;
-  block.life = 175;
+  block.life = 185;
   blocks.add(block);
   row = block;
   //console.log("Created block at " + X + ", " + Y);
