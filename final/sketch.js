@@ -82,9 +82,6 @@ function draw() {
       if(player.position.x > canvasFull - 128)
         player.position.x = canvasFull - 128;
 
-      if(player.collide(blocks))
-        player.velocity.x = 0;
-
       //if player goes out of bounds, they lose
 
       //draw time along top of canvas
