@@ -4,7 +4,7 @@ var menu = false;
 var player = null;
 var row = null;
 var blocks;
-var fill = false;
+var wall = false;
 var left = false;
 var ints10 = [0,1,2,3,4,5,6,7,8,9];
 var ints6 = [0,1,2,3,4,5];
@@ -47,7 +47,7 @@ function draw() {
       if(millis() - lastRow > 465){
         //console.log("Row is at " + row.position.y);
         if(increment == 0){
-          if(fill){
+          if(wall){
             if(left)
               createRow(random(optionsL));
             else {
@@ -59,7 +59,7 @@ function draw() {
           }
         }
         else{
-          if(fill){
+          if(wall){
             createRow(1);
           }
           else{
@@ -121,7 +121,7 @@ function createRow(index){
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
       blocks.add(createBlock(5));
-      fill = false;
+      wall = false;
       break;
     case 3:
       //left exit
@@ -129,7 +129,7 @@ function createRow(index){
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
       blocks.add(createBlock(5));
-      fill = false;
+      wall = false;
       break;
     case 4:
       //middle exit
@@ -137,7 +137,7 @@ function createRow(index){
       blocks.add(createBlock(2));
       blocks.add(createBlock(4));
       blocks.add(createBlock(5));
-      fill = false;
+      wall = false;
       break;
     case 5:
       //right exit
@@ -145,7 +145,7 @@ function createRow(index){
       blocks.add(createBlock(2));
       blocks.add(createBlock(3));
       blocks.add(createBlock(5));
-      fill = false;
+      wall = false;
       break;
     case 6:
       //rightmost exit
@@ -153,14 +153,14 @@ function createRow(index){
       blocks.add(createBlock(2));
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
-      fill = false;
+      wall = false;
       break;
     case 7:
       //left/right, take left
       blocks.add(createBlock(2));
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
-      fill = true;
+      wall = true;
       left = true;
       break;
     case 8:
@@ -168,7 +168,7 @@ function createRow(index){
       blocks.add(createBlock(2));
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
-      fill = true;
+      wall = true;
       left = false;
       break;
     default:
