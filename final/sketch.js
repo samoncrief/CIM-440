@@ -4,6 +4,8 @@ var menu = false;
 var player = null;
 var row = null;
 var blocks;
+var ints10 = [0,1,2,3,4,5,6,7,8,9];
+var ints6 = [0,1,2,3,4,5];
 
 var lastRow = 0;
 var increment = 1;
@@ -40,7 +42,7 @@ function draw() {
       if(millis() - lastRow > 465){
         //console.log("Row is at " + row.position.y);
         if(increment == 0){
-          createRow(random(7)%7);
+          createRow(random(ints6));
           increment++;
         }
         else{
