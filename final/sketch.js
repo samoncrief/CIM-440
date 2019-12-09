@@ -40,13 +40,13 @@ function draw() {
       if(millis() - lastRow > 465){
         //console.log("Row is at " + row.position.y);
         if(increment == 0){
-          createRow(random(10)%10);
+          createRow(random(7)%7);
           increment++;
         }
         else{
           createRow(0);
           increment++;
-          increment%10;
+          increment = increment % 10;
         }
         lastRow = millis();
       }
