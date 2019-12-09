@@ -42,7 +42,7 @@ function draw() {
       if(millis() - lastRow > 465){
         //console.log("Row is at " + row.position.y);
         if(increment == 0){
-          createRow(random(ints6));
+          createRow(1);
           increment++;
         }
         else{
