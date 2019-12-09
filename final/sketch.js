@@ -4,8 +4,13 @@ var menu = false;
 var player = null;
 var row = null;
 var blocks;
+var fill = false;
+var left = false;
 var ints10 = [0,1,2,3,4,5,6,7,8,9];
 var ints6 = [0,1,2,3,4,5];
+var optionsFull = [2,3,4,5,6,7,8];
+var optionsL = [2,3,7];
+var optionsR = [5,6,8];
 
 var lastRow = 0;
 var increment = 1;
@@ -42,14 +47,27 @@ function draw() {
       if(millis() - lastRow > 465){
         //console.log("Row is at " + row.position.y);
         if(increment == 0){
-          createRow(random(ints6)+1);
-          increment++;
+          if(fill){
+            if(left)
+              createRow(random(optionsL));
+            else {
+              createRow(random(optionsR));
+            }
+          }
+          else {
+            createRow(random(optionsFull));
+          }
         }
         else{
-          createRow(0);
-          increment++;
-          increment = increment % 10;
+          if(fill){
+            createRow(1);
+          }
+          else{
+            createRow(0);
+          }
         }
+        increment++;
+        increment = increment % 10;
         lastRow = millis();
       }
 
@@ -103,6 +121,7 @@ function createRow(index){
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
       blocks.add(createBlock(5));
+      fill = false;
       break;
     case 3:
       //left exit
@@ -110,6 +129,7 @@ function createRow(index){
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
       blocks.add(createBlock(5));
+      fill = false;
       break;
     case 4:
       //middle exit
@@ -117,6 +137,7 @@ function createRow(index){
       blocks.add(createBlock(2));
       blocks.add(createBlock(4));
       blocks.add(createBlock(5));
+      fill = false;
       break;
     case 5:
       //right exit
@@ -124,6 +145,7 @@ function createRow(index){
       blocks.add(createBlock(2));
       blocks.add(createBlock(3));
       blocks.add(createBlock(5));
+      fill = false;
       break;
     case 6:
       //rightmost exit
@@ -131,19 +153,24 @@ function createRow(index){
       blocks.add(createBlock(2));
       blocks.add(createBlock(3));
       blocks.add(createBlock(4));
+      fill = false;
       break;
     case 7:
-      //left/mid, take left
-    case 8:
-      //left/mid, take mid
-    case 9:
       //left/right, take left
-    case 10:
+      blocks.add(createBlock(2));
+      blocks.add(createBlock(3));
+      blocks.add(createBlock(4));
+      fill = true;
+      left = true;
+      break;
+    case 8:
       //left/right, take right
-    case 11:
-      //mid/right, take mid
-    case 12:
-      //mid/right, take
+      blocks.add(createBlock(2));
+      blocks.add(createBlock(3));
+      blocks.add(createBlock(4));
+      fill = true;
+      left = false;
+      break;
     default:
       //blocks.add(block);
   }
