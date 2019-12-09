@@ -104,6 +104,6 @@ function createRow(index){
       //mid/right, take
     default:
       createBlock(0);
-      createBlock(4);
+      createBlock(6);
   }
 }
