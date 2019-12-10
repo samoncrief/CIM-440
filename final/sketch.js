@@ -104,7 +104,12 @@ function draw() {
 
 function mouseClicked(){
   //pause/unpause game on mouse click
-  menu != menu;
+  if(menu){
+    menu = false;
+  }
+  else {
+    menu = true;
+  }
 }
 
 function createBlock(indexB){
