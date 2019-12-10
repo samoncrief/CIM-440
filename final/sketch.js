@@ -37,9 +37,11 @@ function draw() {
   //main loop
   if(menu){
     //initial menu
+    textAlign(CENTER);
+    textSize(20);
     rect(canvasFull/4,canvasFull/4,canvasFull/2,canvasFull/2);
-    fill("black");
-    text(menuText,canvasFull/4 + 10,canvasFull/4 + 10);
+    fill("red");
+    text(menuText,canvasFull/2,canvasFull/2);
   }
   else{
     if(player == null){
