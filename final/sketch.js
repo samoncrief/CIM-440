@@ -36,6 +36,7 @@ function draw() {
   //main loop
   if(menu){
     //initial menu
+    rect(canvasFull/4,canvasFull/4,canvasFull/2,canvasFull/2);
   }
   else{
     if(player == null){
@@ -96,19 +97,20 @@ function draw() {
 
       //draw time along top of canvas
     }
+    //draw sprites
+    drawSprites();
   }
 
-  //draw sprites
-  drawSprites();
+
+
+  stroke("red");
+  strokeWeight(10);
+  line(0,canvasFull-10,canvasFull,0);
 }
 
 function mouseClicked(){
-  //pause/unpause game on mouse click
   if(menu){
     menu = false;
-  }
-  else {
-    menu = true;
   }
 }
 
