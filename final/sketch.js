@@ -11,6 +11,7 @@ var ints6 = [0,1,2,3,4,5];
 var optionsFull = [2,3,4,5,6,7,8];
 var optionsL = [2,3,7];
 var optionsR = [5,6,8];
+var menuText = "Welcome to Boxed!\n"
 
 var lastRow = 0;
 var increment = 1;
@@ -37,6 +38,8 @@ function draw() {
   if(menu){
     //initial menu
     rect(canvasFull/4,canvasFull/4,canvasFull/2,canvasFull/2);
+    fill("black");
+    text(menuText,canvasFull/4 + 10,canvasFull/4 + 10);
   }
   else{
     if(player == null){
