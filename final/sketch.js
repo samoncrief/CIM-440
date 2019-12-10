@@ -94,6 +94,9 @@ function draw() {
       }
 
       //if player goes out of bounds, they lose
+      if(player.position.y > canvasFull - 10 - 96){
+        menu = true;
+      }
 
       //draw time along top of canvas
     }
@@ -105,7 +108,7 @@ function draw() {
 
   stroke("red");
   strokeWeight(10);
-  line(0,canvasFull-10,canvasFull,canvasFull);
+  line(0,canvasFull-10,canvasFull,canvasFull-10);
 }
 
 function mouseClicked(){
