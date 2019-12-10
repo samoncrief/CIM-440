@@ -94,7 +94,7 @@ function draw() {
       }
 
       //if player goes out of bounds, they lose
-      if(player.position.y > canvasFull - 10 - 48){
+      if(player.position.y > canvasFull - 10 - 24){
         menu = true;
       }
 
@@ -115,6 +115,8 @@ function mouseClicked(){
   if(menu){
     menu = false;
     lastRow = millis();
+    increment = 1;
+    wall = false;
     player.position.x = canvasFull/2;
     player.position.y = canvasFull/2;
   }
