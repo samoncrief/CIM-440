@@ -67,7 +67,7 @@ function draw() {
           }
         }
         increment++;
-        increment = increment % 10;
+        increment = increment % 8;
         lastRow = millis();
       }
 
@@ -78,16 +78,16 @@ function draw() {
       //collisions
       player.collide(blocks);
 
-      if(player.position.x < 128)
-        player.position.x = 128;
-      if(player.position.x > canvasFull - 128)
-        player.position.x = canvasFull - 128;
+      if(player.position.x < 112)
+        player.position.x = 112;
+      if(player.position.x > canvasFull - 112)
+        player.position.x = canvasFull - 112;
 
       for(var i = 0; i < blocks.size(); i++){
-        if(player.velocity.x < 0 && blocks.toArray()[i].overlapPoint(player.position.x - 64,player.position.y)){
+        if(player.velocity.x < 0 && blocks.toArray()[i].overlapPoint(player.position.x - 48,player.position.y)){
           player.velocity.x = 0;
         }
-        else if(player.velocity.x > 0 && blocks.toArray()[i].overlapPoint(player.position.x + 64,player.position.y)){
+        else if(player.velocity.x > 0 && blocks.toArray()[i].overlapPoint(player.position.x + 48,player.position.y)){
           player.velocity.x = 0;
         }
       }
@@ -111,7 +111,7 @@ function createBlock(indexB){
   block.addAnimation('normal','boxYellow.png');
   block.velocity.y = 5;
   block.immovable = true;
-  block.life = 185;
+  block.life = 200;
   row = block;
   return block;
 }
