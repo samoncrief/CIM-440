@@ -1,6 +1,6 @@
 var canvasFull = 762;
 
-var menu = false;
+var menu = true;
 var player = null;
 var row = null;
 var blocks;
@@ -105,7 +105,7 @@ function draw() {
 
   stroke("red");
   strokeWeight(10);
-  line(0,canvasFull-10,canvasFull,0);
+  line(0,canvasFull-10,canvasFull,canvasFull);
 }
 
 function mouseClicked(){
