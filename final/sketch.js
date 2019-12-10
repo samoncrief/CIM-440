@@ -11,7 +11,7 @@ var ints6 = [0,1,2,3,4,5];
 var optionsFull = [2,3,4,5,6,7,8];
 var optionsL = [2,3,7];
 var optionsR = [5,6,8];
-var menuText = "Welcome to Boxed!\nMove the mouse left and right to avoid obstacles\nClick to continue";
+var menuText = "Welcome to Boxed!\nMove the mouse left and\nright to avoid obstacles\nClick to continue";
 
 var lastRow = 0;
 var increment = 1;
@@ -102,7 +102,7 @@ function draw() {
 
       //if player goes out of bounds, they lose
       if(player.position.y > canvasFull - 10 - 24){
-        menuText = "Game over\nYour Score: " + score + "\nClick to retry";
+        menuText = "GAME OVER\nYour Score: " + score + "\nClick to retry";
         menu = true;
       }
 
