@@ -39,10 +39,10 @@ function draw() {
   if(menu){
     //initial menu
     textAlign(CENTER);
-    textSize(40);
+    textSize(30);
     rect(canvasFull/4,canvasFull/4,canvasFull/2,canvasFull/2);
     fill("red");
-    text(menuText,canvasFull/2,canvasFull/2-40);
+    text(menuText,canvasFull/2,canvasFull/2-30);
   }
   else{
     if(player == null){
