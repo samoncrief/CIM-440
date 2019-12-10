@@ -19,7 +19,7 @@ function setup() {
   // put setup code here
   createCanvas(canvasFull, canvasFull);
 
-  player = createSprite(canvasFull/2,canvasFull/2,127,127);
+  player = createSprite(canvasFull/2,canvasFull/2,96,96);
   player.addAnimation('normal', 'boxGreen.png');
 
   blocks = new Group();
