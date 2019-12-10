@@ -15,6 +15,7 @@ var menuText = "Welcome to Boxed!\nClick to continue";
 
 var lastRow = 0;
 var increment = 1;
+var score = 0;
 
 function setup() {
   // put setup code here
@@ -75,6 +76,7 @@ function draw() {
         increment++;
         increment = increment % 8;
         lastRow = millis();
+        score++;
       }
 
       //move sprites
@@ -108,6 +110,8 @@ function draw() {
     }
     //draw sprites
     drawSprites();
+    rect(canvasFull/2-100,0,200,50);
+    text(score,canvasFull/2,25);
   }
 
 
@@ -135,6 +139,7 @@ function createBlock(indexB){
   block.immovable = true;
   block.life = 200;
   row = block;
+  score = 0;
   return block;
 }
 
