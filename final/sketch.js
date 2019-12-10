@@ -11,7 +11,7 @@ var ints6 = [0,1,2,3,4,5];
 var optionsFull = [2,3,4,5,6,7,8];
 var optionsL = [2,3,7];
 var optionsR = [5,6,8];
-var menuText = "Welcome to Boxed!\nClick to continue";
+var menuText = "Welcome to Boxed!\nMove the mouse left and right to avoid obstacles\nClick to continue";
 
 var lastRow = 0;
 var increment = 1;
@@ -42,7 +42,7 @@ function draw() {
     textSize(40);
     rect(canvasFull/4,canvasFull/4,canvasFull/2,canvasFull/2);
     fill("red");
-    text(menuText,canvasFull/2,canvasFull/2);
+    text(menuText,canvasFull/2,canvasFull/2-40);
   }
   else{
     if(player == null){
