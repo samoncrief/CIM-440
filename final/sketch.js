@@ -44,7 +44,7 @@ function draw() {
     }
     else{
       //main game loop
-      if(millis() - lastRow > 400){
+      if(millis() - lastRow > 425){
         //console.log("Row is at " + row.position.y);
         if(increment == 0){
           if(wall){
@@ -104,6 +104,7 @@ function draw() {
 
 function mouseClicked(){
   //pause/unpause game on mouse click
+  menu != menu;
 }
 
 function createBlock(indexB){
