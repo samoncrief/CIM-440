@@ -39,7 +39,7 @@ function draw() {
   if(menu){
     //initial menu
     textAlign(CENTER);
-    textSize(50);
+    textSize(40);
     rect(canvasFull/4,canvasFull/4,canvasFull/2,canvasFull/2);
     fill("red");
     text(menuText,canvasFull/2,canvasFull/2);
@@ -102,7 +102,7 @@ function draw() {
 
       //if player goes out of bounds, they lose
       if(player.position.y > canvasFull - 10 - 24){
-        menuText = "Game over\nClick to retry";
+        menuText = "Game over\nYour Score: " + score + "\nClick to retry";
         menu = true;
       }
 
@@ -110,11 +110,11 @@ function draw() {
     }
     //draw sprites
     drawSprites();
+    rect(canvasFull/2-100,0,200,50);
     textAlign(CENTER);
     textSize(30);
     fill("red");
-    rect(canvasFull/2-100,0,200,50);
-    text(score,canvasFull/2,25);
+    text(score,canvasFull/2,30);
   }
 
 
