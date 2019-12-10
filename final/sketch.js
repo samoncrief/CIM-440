@@ -39,7 +39,7 @@ function draw() {
   if(menu){
     //initial menu
     textAlign(CENTER);
-    textSize(30);
+    textSize(50);
     rect(canvasFull/4,canvasFull/4,canvasFull/2,canvasFull/2);
     fill("red");
     text(menuText,canvasFull/2,canvasFull/2);
@@ -110,6 +110,9 @@ function draw() {
     }
     //draw sprites
     drawSprites();
+    textAlign(CENTER);
+    textSize(30);
+    fill("red");
     rect(canvasFull/2-100,0,200,50);
     text(score,canvasFull/2,25);
   }
