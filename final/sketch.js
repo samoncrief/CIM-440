@@ -127,6 +127,7 @@ function mouseClicked(){
     lastRow = millis();
     increment = 1;
     wall = false;
+    score = 0;
     player.position.x = canvasFull/2;
     player.position.y = canvasFull/2;
   }
@@ -139,7 +140,6 @@ function createBlock(indexB){
   block.immovable = true;
   block.life = 200;
   row = block;
-  score = 0;
   return block;
 }
 
